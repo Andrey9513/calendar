@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 async function checkAuthentication() {
     try {
         // Try to fetch events - if successful, we're authenticated
-        const response = await fetch('/api/events');
-        if (response.ok) {
+        // const response = await fetch('/api/events');
+        // if (response.ok) {
             // Already authenticated, show calendar
             showPasswordPrompt();
-        } else {
-            // Not authenticated, show login
-            showLogin();
-        }
+        // } else {
+        //     // Not authenticated, show login
+        //     showLogin();
+        // }
     } catch (error) {
         showLogin();
     }

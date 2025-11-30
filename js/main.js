@@ -34,9 +34,9 @@ function showLogin() {
         const errorEl = document.getElementById('login-error');
 
         try {
-            await CalendarAPI.login(password);
-            userPassword = password;
-            await loadCalendar();
+            // await CalendarAPI.login(password);
+            // userPassword = password;
+            // await loadCalendar();
             document.getElementById('login-container').classList.add('hidden');
             document.getElementById('calendar-container').classList.remove('hidden');
         } catch (error) {

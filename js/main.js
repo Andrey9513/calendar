@@ -120,10 +120,10 @@ async function saveEvents(events) {
     try {
         // Encrypt events
         const plaintext = JSON.stringify(events);
-        const encrypted = await CalendarAPI.encrypt(plaintext, userPassword);
+        //const encrypted = await CalendarAPI.encrypt(plaintext, userPassword);
 
         // Save to API
-        await CalendarAPI.saveEvents(encrypted);
+        await CalendarAPI.saveEvents(plaintext);
     } catch (error) {
         console.error('Failed to save events:', error);
         //alert('Failed to save events. Please try again.');

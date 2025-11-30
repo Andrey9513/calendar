@@ -47,13 +47,13 @@ function showLogin() {
 
 function showPasswordPrompt() {
     // User is authenticated but we need password for decryption
-    const password = prompt('Enter your encryption password to decrypt events:');
-    if (!password) {
-        window.location.href = '/auth/logout';
-        return;
-    }
+    // const password = prompt('Enter your encryption password to decrypt events:');
+    // if (!password) {
+    //     window.location.href = '/auth/logout';
+    //     return;
+    // }
     
-    userPassword = password;
+    // userPassword = password;
     loadCalendar();
     document.getElementById('login-container').classList.add('hidden');
     document.getElementById('calendar-container').classList.remove('hidden');
@@ -64,12 +64,12 @@ async function loadCalendar() {
         // Fetch encrypted events
         const encryptedData = await CalendarAPI.getEvents();
         
-        let events = [];
-        if (encryptedData && encryptedData.ciphertext) {
-            // Decrypt events
-            const decryptedJson = await CalendarAPI.decrypt(encryptedData, userPassword);
-            events = JSON.parse(decryptedJson);
-        }
+        let events = encryptedData;
+        // if (encryptedData && encryptedData.ciphertext) {
+        //     // Decrypt events
+        //     const decryptedJson = await CalendarAPI.decrypt(encryptedData, userPassword);
+        //     events = JSON.parse(decryptedJson);
+        // }
 
         // Initialize calendar UI
         CalendarUI.init(events);

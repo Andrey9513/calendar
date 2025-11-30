@@ -89,8 +89,8 @@ async function loadCalendar() {
 
     } catch (error) {
         console.error('Failed to load calendar:', error);
-        alert('Failed to decrypt calendar. Please check your password.');
-        window.location.reload();
+        //alert('Failed to decrypt calendar. Please check your password.');
+        //window.location.reload();
     }
 }
 
@@ -126,6 +126,6 @@ async function saveEvents(events) {
         await CalendarAPI.saveEvents(encrypted);
     } catch (error) {
         console.error('Failed to save events:', error);
-        alert('Failed to save events. Please try again.');
+        //alert('Failed to save events. Please try again.');
     }
 }

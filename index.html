@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Calendar</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Form (shown initially) -->
+        <div id="login-container" class="container">
+            <div class="login-box">
+                <h1>🗓️ Family Calendar</h1>
+                <form id="login-form">
+                    <input type="password" id="password" placeholder="Enter password" required>
+                    <button type="submit">Login</button>
+                    <p id="login-error" class="error"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Calendar (shown after login) -->
+        <div id="calendar-container" class="container hidden">
+            <header>
+                <h1>🗓️ Family Calendar</h1>
+                <button id="logout-btn" class="btn-secondary">Logout</button>
+            </header>
+
+            <div class="calendar-controls">
+                <button id="prev-month" class="btn-nav">←</button>
+                <h2 id="current-month"></h2>
+                <button id="next-month" class="btn-nav">→</button>
+            </div>
+
+            <div id="calendar-grid"></div>
+
+            <div class="event-section">
+                <h3>Add Event</h3>
+                <form id="event-form">
+                    <input type="text" id="event-title" placeholder="Event title" required>
+                    <input type="date" id="event-date" required>
+                    <input type="time" id="event-time">
+                    <textarea id="event-description" placeholder="Description (optional)"></textarea>
+                    <button type="submit">Add Event</button>
+                </form>
+            </div>
+
+            <div class="events-list">
+                <h3>Upcoming Events</h3>
+                <div id="events-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

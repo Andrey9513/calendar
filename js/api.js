@@ -107,7 +107,7 @@ const CalendarAPI = {
 
     // Get encrypted events from API
     async getEvents() {
-        const response = await fetch('/api/events');
+        const response = await fetch('calendar/api/events');
         if (!response.ok) {
             throw new Error('Failed to fetch events');
         }
@@ -116,7 +116,7 @@ const CalendarAPI = {
 
     // Save encrypted events to API
     async saveEvents(encryptedData) {
-        const response = await fetch('/api/events', {
+        const response = await fetch('calendar/api/events', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(encryptedData)
